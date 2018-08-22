@@ -7,9 +7,8 @@ routes = {
 
 
 def parse_environ(environment, start_response):
-    print(environment)
-    headers = {"Content-Type": "text/html"}
-    start_response("200 Ok", headers.items())
+    headers = [("Content-Type", "text/html")]
+    start_response("200 Ok", headers)
 
     path = environment.get('PATH_INFO', '/')
 
