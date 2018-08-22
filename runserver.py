@@ -13,15 +13,25 @@ def main():
         host, port = 'localhost', 8000
 
     elif args_length == 2:
-        host, port = sys.argv[0], 8000
+        host, port = 'localhost', int(sys.argv[1])
 
     else:
-        host, port = sys.argv[0], int(sys.argv[1])
+        host, port = sys.argv[1], int(sys.argv[2])
 
     application = Wsgi()
-    httpd = make_server(host, port, application)
-    print(f"Listening to {host}:{port}")
-    httpd.serve_forever()
+
+    try:
+        print("Starting server ...")
+        httpd = make_server(host, port, application)
+        print(f"Listening to {host}:{port}")
+        print("Quit server with CONTROL-C")
+        httpd.serve_forever()
+    except OSError:
+        print("Looks like the port you provided is already in use.")
+    except KeyboardInterrupt:
+        print()
+        print("Turning Off the server ...")
+        print("Server Turned Off")
 
 
 if __name__ == '__main__':
