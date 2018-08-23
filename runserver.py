@@ -4,6 +4,8 @@ import sys
 from wsgiref.simple_server import make_server
 
 from core.wsgi.application import Wsgi
+import os
+
 
 
 def main():
@@ -11,13 +13,12 @@ def main():
 
     if args_length <= 1:
         host, port = 'localhost', 8000
-
     elif args_length == 2:
         host, port = 'localhost', int(sys.argv[1])
-
     else:
         host, port = sys.argv[1], int(sys.argv[2])
 
+    os.environ.setdefault("SETTINGS_MODULE", 'example.settings')
     application = Wsgi()
 
     try:
