@@ -1,5 +1,4 @@
-from ..route.parse_environment import parse_environment
-import os
+from ..route.parse import parse_environment
 
 
 class Wsgi:
