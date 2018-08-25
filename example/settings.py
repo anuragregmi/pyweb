@@ -1,1 +1,1 @@
-DATABASE = "abcd"
+ROUTES = 'example.routes'

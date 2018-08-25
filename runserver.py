@@ -7,7 +7,6 @@ from core.wsgi.application import Wsgi
 import os
 
 
-
 def main():
     args_length = len(sys.argv)
 

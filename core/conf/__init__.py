@@ -1,6 +1,13 @@
 import os
 from importlib import import_module
 
+from ..utils.lazy_object import LazyObject
+
+
+class LazySetting(LazyObject):
+    def setup(self, *args, **kwargs):
+        self.instance = Setting()
+
 
 class Setting:
     environment_name = "SETTINGS_MODULE"
@@ -14,5 +21,4 @@ class Setting:
             setattr(self, setting, value)
 
 
-# settings = Setting()
-settings = type("Settings", tuple(), {})()
+settings = LazySetting()
