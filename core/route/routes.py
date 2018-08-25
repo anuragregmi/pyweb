@@ -6,5 +6,5 @@ from ..conf.errors import ImproperlyConfigured
 def get_routes(routes_path):
     mod = import_module(routes_path)
     if "routes" not in dir(mod):
-        raise ImproperlyConfigured("Improperly Configured routs")
+        raise ImproperlyConfigured("Improperly Configured routes")
     return mod.routes
