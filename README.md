@@ -1,5 +1,5 @@
-# webapp
-#### Based on python and wsgi
+# pyweb
+#### Web famework Based on python and wsgi
 ###### [Development In Progress]
 
 # Dependencies
