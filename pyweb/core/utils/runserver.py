@@ -3,7 +3,7 @@
 import sys
 from wsgiref.simple_server import make_server
 
-from core.wsgi.application import Wsgi
+from pyweb.core.wsgi.application import Wsgi
 import os
 
 

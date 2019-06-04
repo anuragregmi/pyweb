@@ -1,5 +1,5 @@
 import os
-from core.conf import settings
+from pyweb.core.conf import settings
 
 
 def get_template_path(template_name):

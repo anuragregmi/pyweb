@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from core.utils.runserver import runserver
+from pyweb.core.utils.runserver import runserver
 
 SETTINGS_MODULE = "example.settings"
 

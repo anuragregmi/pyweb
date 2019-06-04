@@ -1,4 +1,4 @@
-from core.template.render import render_template
+from pyweb.core.template import render_template
 
 
 def get_home_page(request):
